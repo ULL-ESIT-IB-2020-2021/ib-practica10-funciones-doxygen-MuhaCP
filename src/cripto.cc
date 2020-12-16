@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
   if (metodo == '1') {
     if (operacion == '+' || operacion == '-') {
-      EncriptarXor(fichero_entrada, fichero_salida, key);
+      EncriptarXor(fichero_entrada, fichero_salida, password);
     }
   }
 

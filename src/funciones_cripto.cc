@@ -32,7 +32,7 @@ void EncriptarCesar(std::string fichero_entrada, std::string fichero_salida,int 
     std::string linea_actual;
     std::getline(archivo_entrada, linea_actual);
 
-    for(int i = 0; i < linea_actual.length(); ++i){
+    for(size_t i = 0; i < linea_actual.length(); ++i){
         linea_actual[i] += key;
     }
     archivo_salida << linea_actual << std::endl;
@@ -57,7 +57,7 @@ void DesencriptarCesar(std::string fichero_entrada, std::string fichero_salida,i
     std::string linea_actual;
     std::getline(archivo_entrada, linea_actual);
 
-    for(int i = 0; i < linea_actual.length(); ++i){
+    for(size_t i = 0; i < linea_actual.length(); ++i){
         linea_actual[i] -= key;
     }
     archivo_salida << linea_actual << std::endl;
@@ -121,5 +121,6 @@ operación:       Operación a realizar en el fichero
   if (argc == 2) {
     std::cout << mensaje2 << std::endl;
     exit(EXIT_FAILURE);
-    }
+    } 
   }
+}
