@@ -3,8 +3,8 @@
 # Grado en Ingeniería Informática
 # Informática Básica
 #
-# @author F. de Sande
-# @date 17 nov 2020
+# @author Muhammad Campos Preira
+# @date 16 dic 2020
 # @brief A Makefile example for HelloWorld program
 # 
 
@@ -16,9 +16,6 @@ LDFLAGS =						             # The linker options (if any)
 all: cripto
 
 cripto: funciones_cripto.o cripto.o
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
-
-cripto2: funciones_cripto2.o cripto2.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 # Indicate that the all and clean targets do not
