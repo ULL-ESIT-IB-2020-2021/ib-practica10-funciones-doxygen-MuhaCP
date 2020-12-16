@@ -1,0 +1,196 @@
+\hypertarget{funciones__cripto_8cc}{}\doxysubsection{funciones\+\_\+cripto.\+cc File Reference}
+\label{funciones__cripto_8cc}\index{funciones\_cripto.cc@{funciones\_cripto.cc}}
+{\ttfamily \#include \char`\"{}funciones\+\_\+cripto.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for funciones\+\_\+cripto.\+cc\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_a9c7a21f716b3ac886b0354bbffadb344}{Encriptar\+Cesar}} (std\+::string fichero\+\_\+entrada, std\+::string fichero\+\_\+salida, int key)
+\begin{DoxyCompactList}\small\item\em Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_a4d38ca72d6e0c1c5443c58ccb6351f4a}{Desencriptar\+Cesar}} (std\+::string fichero\+\_\+entrada, std\+::string fichero\+\_\+salida, int key)
+\begin{DoxyCompactList}\small\item\em Realiza el descifrado César a una cadenana de texto dada una constante de desplazamiento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_a1396f898bbc13bd04ab79926f2df9f67}{Encriptar\+Xor}} (std\+::string fichero\+\_\+entrada, std\+::string fichero\+\_\+salida, std\+::string password)
+\begin{DoxyCompactList}\small\item\em Realiza el cifrado César a una cadenana de texto dada una constante de desplazamiento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__cripto_8cc_a2dc16428f78f5693648fd0ee4d5f7ebd}{Uso\+Programa}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Muestra el uso correcto del programa Si el uso no es correcto muestra un mensaje y finaliza la ejecución. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{funciones__cripto_8cc_a4d38ca72d6e0c1c5443c58ccb6351f4a}\label{funciones__cripto_8cc_a4d38ca72d6e0c1c5443c58ccb6351f4a}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!DesencriptarCesar@{DesencriptarCesar}}
+\index{DesencriptarCesar@{DesencriptarCesar}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{DesencriptarCesar()}{DesencriptarCesar()}}
+{\footnotesize\ttfamily void Desencriptar\+Cesar (\begin{DoxyParamCaption}\item[{std\+::string}]{fichero\+\_\+entrada,  }\item[{std\+::string}]{fichero\+\_\+salida,  }\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Realiza el descifrado César a una cadenana de texto dada una constante de desplazamiento. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em archivo\+\_\+entrada} & archivo a decodificar \\
+\hline
+\mbox{\texttt{ in}}  & {\em archivo\+\_\+salida} & archivo decodificado \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & numero de desplazamientos \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                                                                    \{}
+\DoxyCodeLine{51   }
+\DoxyCodeLine{52   std::ifstream archivo\_entrada\{fichero\_entrada\};}
+\DoxyCodeLine{53   std::ofstream archivo\_salida\{fichero\_salida\};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keywordflow}{while}(archivo\_entrada)\{}
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     std::string linea\_actual;}
+\DoxyCodeLine{58     std::getline(archivo\_entrada, linea\_actual);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < linea\_actual.length(); ++i)\{}
+\DoxyCodeLine{61         linea\_actual[i] -\/= key;}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63     archivo\_salida << linea\_actual << std::endl;}
+\DoxyCodeLine{64   \}}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{funciones__cripto_8cc_a9c7a21f716b3ac886b0354bbffadb344}\label{funciones__cripto_8cc_a9c7a21f716b3ac886b0354bbffadb344}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!EncriptarCesar@{EncriptarCesar}}
+\index{EncriptarCesar@{EncriptarCesar}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{EncriptarCesar()}{EncriptarCesar()}}
+{\footnotesize\ttfamily void Encriptar\+Cesar (\begin{DoxyParamCaption}\item[{std\+::string}]{fichero\+\_\+entrada,  }\item[{std\+::string}]{fichero\+\_\+salida,  }\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. 
+
+\begin{DoxyAuthor}{Author}
+Muhammad Campos Preira 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16.\+dec.\+2020
+\end{DoxyDate}
+Funciones utilizadas en el programa \mbox{\hyperlink{cripto_8cc}{cripto.\+cc}} Realiza el cifrado César a una cadenana de texto dada una constante de desplazamiento 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em archivo\+\_\+entrada} & archivo a codificar \\
+\hline
+\mbox{\texttt{ in}}  & {\em archivo\+\_\+salida} & archivo codificado \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & numero de desplazamientos \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                                                                                 \{}
+\DoxyCodeLine{26   }
+\DoxyCodeLine{27   std::ifstream archivo\_entrada\{fichero\_entrada\};}
+\DoxyCodeLine{28   std::ofstream archivo\_salida\{fichero\_salida\};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keywordflow}{while}(archivo\_entrada)\{}
+\DoxyCodeLine{31     }
+\DoxyCodeLine{32     std::string linea\_actual;}
+\DoxyCodeLine{33     std::getline(archivo\_entrada, linea\_actual);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < linea\_actual.length(); ++i)\{}
+\DoxyCodeLine{36         linea\_actual[i] += key;}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     archivo\_salida << linea\_actual << std::endl;}
+\DoxyCodeLine{39   \}}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{funciones__cripto_8cc_a1396f898bbc13bd04ab79926f2df9f67}\label{funciones__cripto_8cc_a1396f898bbc13bd04ab79926f2df9f67}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!EncriptarXor@{EncriptarXor}}
+\index{EncriptarXor@{EncriptarXor}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{EncriptarXor()}{EncriptarXor()}}
+{\footnotesize\ttfamily void Encriptar\+Xor (\begin{DoxyParamCaption}\item[{std\+::string}]{fichero\+\_\+entrada,  }\item[{std\+::string}]{fichero\+\_\+salida,  }\item[{std\+::string}]{password }\end{DoxyParamCaption})}
+
+
+
+Realiza el cifrado César a una cadenana de texto dada una constante de desplazamiento. 
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em archivo\+\_\+entrada} & archivo a codificar \\
+\hline
+\mbox{\texttt{ in}}  & {\em archivo\+\_\+salida} & archivo codificado \\
+\hline
+\mbox{\texttt{ in}}  & {\em password} & clave para cifrado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file funciones\+\_\+cripto.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74                                                                                          \{}
+\DoxyCodeLine{75   }
+\DoxyCodeLine{76   std::ifstream archivo\_entrada\{fichero\_entrada\};}
+\DoxyCodeLine{77   std::ofstream archivo\_salida\{fichero\_salida\};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i = 0; i > password.length(); ++i)\{}
+\DoxyCodeLine{80     password[i] \string^= 128;}
+\DoxyCodeLine{81   \} }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordflow}{while}(archivo\_entrada)\{}
+\DoxyCodeLine{84     }
+\DoxyCodeLine{85     std::string linea\_actual;}
+\DoxyCodeLine{86     std::getline(archivo\_entrada, linea\_actual);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i = 0; i < linea\_actual.length(); ++i)\{}
+\DoxyCodeLine{89         linea\_actual[i] \string^= password[i\%password.length()-\/1];}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91     archivo\_salida << linea\_actual << std::endl;}
+\DoxyCodeLine{92   \}}
+\DoxyCodeLine{93 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{funciones__cripto_8cc_a2dc16428f78f5693648fd0ee4d5f7ebd}\label{funciones__cripto_8cc_a2dc16428f78f5693648fd0ee4d5f7ebd}} 
+\index{funciones\_cripto.cc@{funciones\_cripto.cc}!UsoPrograma@{UsoPrograma}}
+\index{UsoPrograma@{UsoPrograma}!funciones\_cripto.cc@{funciones\_cripto.cc}}
+\doxyparagraph{\texorpdfstring{UsoPrograma()}{UsoPrograma()}}
+{\footnotesize\ttfamily void Uso\+Programa (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Muestra el uso correcto del programa Si el uso no es correcto muestra un mensaje y finaliza la ejecución. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & Número de parámetros de línea de comandos \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & Vector (char$\ast$) que contiene los parámetros \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file funciones\+\_\+cripto.\+cc.
+
